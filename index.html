@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Paytone+One&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Zingen | Quem canta seus males espanta</title>
   </head>
@@ -15,22 +23,14 @@
       </div>
 
       <nav>
-        <a href="#">Conheça o app</a>
-        <a href="#">Funcionalidades</a>
-        <a href="#">Planos e preços</a>
-        <button class="secondary">Baixar agora</button>
+        <a href="#about">Conheça o app</a>
+        <a href="#features">Funcionalidades</a>
+        <a href="#pricing">Planos e preços</a>
+        <button class="primary" aria-label="Baixar agora">Baixar agora</button>
       </nav>
     </header>
 
     <section id="hero">
-      <div id="ilustration">
-        <div id="backlights">
-          <div id="elipse-1"></div>
-          <div id="elipse-2"></div>
-        </div>
-        <div id="elipse"></div>
-      </div>
-
       <main>
         <div id="principal">
           <div id="music-bars">
@@ -44,8 +44,9 @@
         </div>
 
         <div id="call-to-action">
-          <button class="primary">Ver planos</button>
-          <button class="secondary">Baixar agora</button>
+          <button class="secondary" aria-label="Ver planos"></button>
+
+          <button class="primary">Baixar agora</button>
         </div>
       </main>
     </section>
@@ -69,9 +70,9 @@
     <section id="features">
       <div class="card">
         <div class="content">
-          <i class="ph ph-magic-wand"></i>
+          <i class="ph-fill ph-magic-wand"></i>
           <div class="title">
-            <h2>A maior biblioteca de músicas de Karaokê!</h2>
+            <h3>A maior biblioteca de músicas de Karaokê!</h3>
             <p>
               Nossa IA remove a voz de qualquer música e a deixa pronta pra
               cantar, num passe de mágica!
@@ -82,23 +83,23 @@
 
       <div class="card">
         <div class="content">
-          <i class="ph ph-game-controller"></i>
+          <i class="ph-fill ph-game-controller"></i>
           <div class="title">
-            <h2>Experiência gamificada</h2>
+            <h3>Experiência gamificada</h3>
             <p>
               Sua performance é pontuada de acordo com nosso algoritmo ultra
               preciso. Desafie-se, ganhe reconhecimento e comemore sua evolução!
             </p>
           </div>
         </div>
-        <img src="./assets/images/Tela-1.png" alt="Imagem de exemplo 01" />
+        <img src="./assets/images/Tela-2.png" alt="Imagem de exemplo 02" />
       </div>
 
       <div class="card">
         <div class="content">
-          <i class="ph ph-microphone-stage"></i>
+          <i class="ph-fill ph-microphone-stage"></i>
           <div class="title">
-            <h2>Grave suas performances</h2>
+            <h3>Grave suas performances</h3>
             <p>
               Seja para compartilhar com os amigos ou para acompanhar sua
               evolução, nosso recurso de gravação de áudio e vídeo permite que
@@ -109,24 +110,25 @@
       </div>
 
       <div class="card">
+        <img src="./assets/images/Tela-1.png" alt="Imagem de exemplo 01" />
+
         <div class="content">
-          <i class="ph ph-users-three"></i>
+          <i class="ph-fill ph-users-three"></i>
           <div class="title">
-            <h2>Compartilhe com a comunidade</h2>
+            <h3>Compartilhe com a comunidade</h3>
             <p>
               Compartilhe suas gravações com a comunidade, interaja e explore a
               performance vocal de outras pessoas no seu feed!
             </p>
           </div>
         </div>
-        <img src="./assets/images/Tela-2.png" alt="Imagem de exemplo 02" />
       </div>
 
       <div class="card">
         <div class="content">
-          <i class="ph ph-music-notes"></i>
+          <i class="ph-fill ph-music-notes"></i>
           <div class="title">
-            <h2>Letras em tempo-real</h2>
+            <h3>Letras em tempo-real</h3>
             <p>
               Nunca perca o ritmo com as letras das músicas sincronizadas e
               exibidas em tempo real. Você também pode ativar a voz original da
@@ -134,13 +136,17 @@
             </p>
           </div>
         </div>
-        <img src="./assets/images/Tela-3.png" alt="Imagem de exemplo 03" />
+        <img
+          src="./assets/images/Tela-3.png"
+          alt="Imagem de exemplo 03"
+          id="down"
+        />
       </div>
     </section>
 
     <section id="pricing">
       <header>
-        <span>Planos e preços</span>
+        <small>Planos e preços</small>
         <h2>Assine e tenha acesso ilimitado a todas as funcionalidades</h2>
       </header>
 
@@ -156,42 +162,63 @@
               <strong>Grátis</strong>
             </div>
 
-            <button class="primary">Baixar agora</button>
+            <button class="secondary" aria-label="Baixar agora"></button>
 
             <div class="divider"></div>
 
-            <ul class="plan-freature">
-              <li>Com anúncios</li>
-              <li>Até 5 músicas por dia</li>
-              <li>Cante apenas as músicas disponíveis no plano gratuito</li>
+            <ul role="list" class="plan-freature">
+              <li>
+                <i class="ph ph-check"></i>
+                Com anúncios
+              </li>
+              <li>
+                <i class="ph ph-check"></i>
+                Até 5 músicas por dia
+              </li>
+              <li>
+                <i class="ph ph-check"></i>
+                Cante apenas as músicas disponíveis no plano gratuito
+              </li>
             </ul>
           </div>
         </div>
 
         <div class="price-card">
-          <div class="card">
-            <header>
-              <h3>Premium</h3>
-              <p>Ideal para quem já cansou de passar vergonha no Karaokê</p>
-            </header>
-
-            <div class="price">
-              <strong>R$ 24,90</strong>
-              <span>/mês</span>
-            </div>
-
-            <button class="secondary"></button>
-
-            <div class="divider"></div>
-
-            <ul class="plan-freature">
-              <li>Sem interrupção de anúncios</li>
-              <li>Cante quantas músicas quiser</li>
-              <li>Cante todas as músicas da biblioteca</li>
-            </ul>
-          </div>
           <div class="pop-up">
             <small>1 mês grátis</small>
+
+            <div class="card">
+              <header>
+                <h3>Premium</h3>
+                <p>Ideal para quem já cansou de passar vergonha no Karaokê</p>
+              </header>
+
+              <div class="price">
+                <strong>R$ 24,90</strong>
+                <span>/mês</span>
+              </div>
+
+              <button class="primary" aria-label="Experimente de graça">
+                Experimente de graça
+              </button>
+
+              <div class="divider"></div>
+
+              <ul role="list" class="plan-freature">
+                <li>
+                  <i class="ph ph-check"></i>
+                  Sem interrupção de anúncios
+                </li>
+                <li>
+                  <i class="ph ph-check"></i>
+                  Cante quantas músicas quiser
+                </li>
+                <li>
+                  <i class="ph ph-check"></i>
+                  Cante todas as músicas da biblioteca
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
@@ -207,14 +234,23 @@
               <span>/mês por pessoa</span>
             </div>
 
-            <button class="primary">Assinar agora</button>
+            <button class="secondary" aria-label="Assinar agora"></button>
 
             <div class="divider"></div>
 
-            <ul class="plan-freature">
-              <li>Sem interrupção de anúncios</li>
-              <li>Cante quantas músicas quiser</li>
-              <li>Cante todas as músicas da biblioteca</li>
+            <ul role="list" class="plan-freature">
+              <li>
+                <i class="ph ph-check"></i>
+                Sem interrupção de anúncios
+              </li>
+              <li>
+                <i class="ph ph-check"></i>
+                Cante quantas músicas quiser
+              </li>
+              <li>
+                <i class="ph ph-check"></i>
+                Cante todas as músicas da biblioteca
+              </li>
 
               <small>Mínimo de 4 pessoas no plano família.</small>
             </ul>
@@ -236,25 +272,28 @@
         </div>
 
         <div class="appstore-buttons">
-          <div class="appstore-button">
+          <button class="appstore-button" aria-label="Baixar na App Store">
             <i class="ph-fill ph-apple-logo"></i>
 
             <div class="text">
               <small>Baixar na</small>
               <strong>App Store</strong>
             </div>
-          </div>
+          </button>
 
-          <div class="appstore-button">
+          <button
+            class="appstore-button"
+            aria-label="Disponível no Google Play"
+          >
             <i class="ph-fill ph-google-play-logo"></i>
 
             <div class="text">
               <small>Disponível no</small>
               <strong>Google Play</strong>
             </div>
-          </div>
+          </button>
         </div>
-        
+
         <img
           src="./assets/images/rapaz-ouvindo-musica-com-fones-de-ouvido-e-cantando-no-aplicativo-de-karaoke.png"
           alt="Rapaz ouvindo música com fones de ouvido e cantando no aplicativo de karaokê"
@@ -269,21 +308,21 @@
         </div>
 
         <nav>
-          <ul id="product">
+          <ul role="list" id="product">
             <small>Produto</small>
             <li>Funcionalidades</li>
             <li>Planos e preços</li>
             <li>Download</li>
           </ul>
 
-          <ul id="institucional">
+          <ul role="list" id="institucional">
             <small>Empresa</small>
             <li>Sobre nós</li>
             <li>Trabalhe conosco</li>
             <li>Blog</li>
           </ul>
 
-          <ul id="legal">
+          <ul role="list" id="legal">
             <small>Legal</small>
             <li>Termos de uso</li>
             <li>Política de privacidade</li>
@@ -298,7 +337,7 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i class="ph-fill ph-google-play-logo"></i>
+            <i class="ph-fill ph-tiktok-logo"></i>
           </a>
 
           <a
