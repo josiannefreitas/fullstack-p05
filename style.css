@@ -271,7 +271,7 @@ header {
   gap: 1.5rem;
 }
 
-& .card {
+.card {
   background: var(--surface-color);
   border: 1px solid var(--stroke-color);
   border-radius: 1.5rem;
@@ -385,31 +385,36 @@ header {
   }
 
   & .price-card:has(.pop-up) {
-    & .pop-up {
+    padding: 2px;
+    position: relative;
+
+    & small {
+      position: absolute;
+
       background: var(--sunshine-gradient);
-      border: 2px solid transparent;
-      border-radius: 1.5rem;
+      border-radius: 1.5rem 0;
+      width: max-content;
 
-      position: relative;
+      display: flex;
+      padding: 0.75rem 2rem;
+      gap: 0.5rem;
 
-      & small {
-        position: absolute;
+      font: 600 0.75rem/1rem var(--font-family);
+      color: var(--background-color);
+      text-transform: uppercase;
+    }
 
+    .card {
+      padding-top: 4.5rem;
+
+      &::before {
+        content: '';
         background: var(--sunshine-gradient);
-        border-radius: 1.5rem 0;
-        width: max-content;
-
-        display: flex;
-        padding: 0.75rem 2rem;
-        gap: 0.5rem;
-
-        font: 600 0.75rem/1rem var(--font-family);
-        color: var(--background-color);
-        text-transform: uppercase;
-      }
-
-      .card {
-        padding-top: 4.5rem;
+        position: absolute;
+        inset: 0;
+        /* border: 2px solid transparent; */
+        border-radius: 1.5rem;
+        z-index: -1;
       }
     }
   }
